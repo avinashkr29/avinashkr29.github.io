@@ -36,7 +36,8 @@ git push origin main
 - The app-ads.txt file is served directly from the root and is accessible at https://avinashkr29.github.io/app-ads.txt
 
 ## Development rules:
-1. always think about the user experience, the ui, /ux, the flow, and make is awesome/wow feel.
+1. always think about the user experience, the ui, /ux, the flow, and make is awesome/wow feel. use context7 and firecrawl mcp servers for latest information . 
 2. Ask me for more guidelines if you are confused of need more details.
 3. always check that there are no compiling error, and that the app will run once you are done. if error, correct it. 
 4. Very important: While coding, desigining, or anything, think like an apple designer. Keep it minimalistic, clean, premium, aesthetics like.
+5. Never give any contribution to yourself that you are making this. it is made by me - avinash.

@@ -437,23 +437,23 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalCSS;
 document.head.appendChild(styleSheet);
 
-// Add smooth page load animation
+// Add smooth page load animation (disabled to prevent flashing)
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     
-    // Add loading animation CSS
-    const loadingCSS = `
-        body {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        body.loaded {
-            opacity: 1;
-        }
-    `;
+    // Loading animation disabled to prevent content flashing
+    // const loadingCSS = `
+    //     body {
+    //         opacity: 0;
+    //         transition: opacity 0.5s ease;
+    //     }
+    //     
+    //     body.loaded {
+    //         opacity: 1;
+    //     }
+    // `;
     
-    const loadingStyleSheet = document.createElement('style');
-    loadingStyleSheet.textContent = loadingCSS;
-    document.head.appendChild(loadingStyleSheet);
+    // const loadingStyleSheet = document.createElement('style');
+    // loadingStyleSheet.textContent = loadingCSS;
+    // document.head.appendChild(loadingStyleSheet);
 });
