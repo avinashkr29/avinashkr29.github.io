@@ -740,8 +740,10 @@ a:hover {
     height: 12px;
     background: var(--primary-color);
     border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
 
 .timeline-content {
@@ -1179,6 +1181,8 @@ a:hover {
     
     .timeline-date::after {
         left: -26px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .timeline-content {
@@ -1267,5 +1271,135 @@ a:hover {
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
+    }
+}
+
+/* App Store Integration Styles */
+.stat-badge.rating {
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+    color: #000 !important;
+    font-weight: 600;
+}
+
+.app-reviews {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: var(--background-tertiary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.review-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.review-highlight i {
+    color: var(--primary-color);
+    font-size: var(--font-size-lg);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.review-highlight p {
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.review-highlight small {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-top: var(--spacing-xs);
+    display: block;
+}
+
+/* Business Impact KPI Styles */
+.business-impact {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--background-tertiary), var(--background-secondary));
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px var(--shadow-light);
+}
+
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-lg);
+    justify-items: center;
+}
+
+.kpi-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.kpi-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    display: block;
+}
+
+.kpi-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Responsive adjustments for KPIs */
+@media (max-width: 768px) {
+    .business-impact {
+        padding: var(--spacing-lg);
+    }
+    
+    .kpi-row {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .kpi-value {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .kpi-label {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .kpi-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .kpi-item {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        width: 100%;
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .kpi-item:last-child {
+        border-bottom: none;
+    }
+    
+    .kpi-value {
+        font-size: var(--font-size-xl);
     }
 }
