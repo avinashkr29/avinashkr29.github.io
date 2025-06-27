@@ -185,6 +185,11 @@ function initializeTypingEffect() {
             charIndex++;
         }
         
+        // Use invisible character to prevent layout shift when text is empty
+        if (heroSubtitle.textContent === '') {
+            heroSubtitle.innerHTML = '&nbsp;'; // Non-breaking space maintains height
+        }
+        
         let speed = isDeleting ? 50 : 100;
         
         if (!isDeleting && charIndex === currentText.length) {

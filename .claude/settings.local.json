@@ -12,7 +12,9 @@
       "WebFetch(domain:itunes.apple.com)",
       "WebFetch(domain:itunes.apple.com)",
       "Bash(grep:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(open:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

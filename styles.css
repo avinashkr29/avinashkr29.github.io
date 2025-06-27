@@ -252,6 +252,11 @@ a:hover {
     color: var(--text-secondary);
     font-weight: 500;
     margin-bottom: var(--spacing-md);
+    min-height: 2.5rem; /* Prevents layout shift during text transitions */
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-tagline {
@@ -711,6 +716,81 @@ a:hover {
     font-weight: 500;
 }
 
+/* Company Logo Styles */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.company-logo {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xs);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.company-info {
+    flex: 1;
+}
+
+.company-info h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.company-info h4 {
+    margin-bottom: 0;
+}
+
+/* University Logo Styles */
+.university-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+/* Mobile Responsiveness for Logos */
+@media (max-width: 768px) {
+    .company-header {
+        gap: var(--spacing-sm);
+    }
+    
+    .company-logo {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .university-logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .timeline-content {
+        margin: 0 var(--spacing-sm);
+        padding: var(--spacing-lg);
+    }
+}
+
 /* Skills Section */
 .skills {
     padding: var(--spacing-4xl) 0;
@@ -742,30 +822,12 @@ a:hover {
     color: var(--primary-color);
 }
 
-.skill-item {
-    margin-bottom: var(--spacing-lg);
-}
 
-.skill-item span {
-    display: block;
-    margin-bottom: var(--spacing-sm);
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-.skill-bar {
-    height: 8px;
-    background: var(--background-secondary);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 4px;
-    width: 0;
-    transition: width 1s ease-out;
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
 }
 
 /* Education Section */
