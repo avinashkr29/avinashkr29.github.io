@@ -8,7 +8,9 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
       "Bash(python3:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:itunes.apple.com)",
+      "WebFetch(domain:itunes.apple.com)"
     ],
     "deny": []
   }

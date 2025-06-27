@@ -28,7 +28,7 @@ I'm a versatile technology professional with dual expertise in data science and 
 
 ## Education
 
-- **MBA Candidate** - Hitotsubashi University (MEXT YLP Scholar)
+- **MBA** - Hitotsubashi University (MEXT YLP Scholar)
 - **B.E. Electronics & Instrumentation** - Anna University (Best Outgoing Student)
 
 ## Website

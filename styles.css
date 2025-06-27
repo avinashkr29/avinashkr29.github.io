@@ -421,6 +421,34 @@ a:hover {
     font-weight: 600;
 }
 
+.app-icon-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.app-icon-image:hover {
+    transform: scale(1.05);
+}
+
+/* Fallback for when image fails to load */
+.app-screenshot img[src=""], 
+.app-screenshot img:not([src]) {
+    display: none;
+}
+
+.app-screenshot img[src=""]:after, 
+.app-screenshot img:not([src]):after {
+    content: '📱';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
 .app-info {
     padding: var(--spacing-2xl);
 }

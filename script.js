@@ -165,7 +165,7 @@ function initializeTypingEffect() {
     
     const texts = [
         'Data Scientist & iOS Developer',
-        'MBA Candidate at Hitotsubashi',
+        'MBA at Hitotsubashi University',
         'MEXT YLP Scholar',
         'Technology Professional'
     ];
@@ -368,11 +368,39 @@ function updateFooterYear() {
     }
 }
 
+// Initialize app icon loading with fallback
+function initializeAppIcons() {
+    const appIcons = document.querySelectorAll('.app-icon-image');
+    
+    appIcons.forEach(icon => {
+        icon.addEventListener('error', function() {
+            // Create fallback icon element
+            const fallbackIcon = document.createElement('i');
+            fallbackIcon.className = 'fas fa-mobile-alt';
+            fallbackIcon.style.fontSize = '3rem';
+            fallbackIcon.style.marginBottom = 'var(--spacing-md)';
+            fallbackIcon.style.color = 'white';
+            
+            // Replace failed image with fallback
+            this.parentNode.replaceChild(fallbackIcon, this);
+        });
+        
+        // Add loading animation
+        icon.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        
+        icon.style.opacity = '0';
+        icon.style.transition = 'opacity 0.3s ease';
+    });
+}
+
 // Call additional initialization functions
 document.addEventListener('DOMContentLoaded', function() {
     initializeScrollReveal();
     initializeAppCardEffects();
     initializeContactForm();
+    initializeAppIcons();
     updateFooterYear();
     
     // Optional: Enable custom cursor on desktop only
