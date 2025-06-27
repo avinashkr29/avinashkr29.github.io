@@ -165,8 +165,8 @@ function initializeTypingEffect() {
     
     const texts = [
         'Data Scientist & iOS Developer',
-        'MBA at Hitotsubashi University',
-        'MEXT YLP Scholar',
+        'MBA at Hitotsubashi University, Tokyo',
+        'MEXT Young Leaders’ Program Scholar',
         'Technology Professional'
     ];
     
