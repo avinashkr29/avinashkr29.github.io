@@ -449,6 +449,13 @@ a:hover {
     margin-bottom: var(--spacing-md);
 }
 
+/* Image loading optimizations */
+.app-icon-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .app-info {
     padding: var(--spacing-2xl);
 }

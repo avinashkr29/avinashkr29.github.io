@@ -10,7 +10,9 @@
       "Bash(python3:*)",
       "Bash(git add:*)",
       "WebFetch(domain:itunes.apple.com)",
-      "WebFetch(domain:itunes.apple.com)"
+      "WebFetch(domain:itunes.apple.com)",
+      "Bash(grep:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
