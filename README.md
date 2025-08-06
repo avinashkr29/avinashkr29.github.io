@@ -33,7 +33,9 @@ I'm a versatile technology professional with dual expertise in data science and 
 
 ## Website
 
-Visit my portfolio: [https://avinashkr29.github.io/](https://avinashkr29.github.io/)
+- **Portfolio**: [https://avinashkr29.github.io/](https://avinashkr29.github.io/)
+- **Dynamic Apps Showcase**: [https://avinashkr29.github.io/apps.html](https://avinashkr29.github.io/apps.html)
+- **JSON API**: [https://avinashkr29.github.io/apps-data.json](https://avinashkr29.github.io/apps-data.json)
 
 ## Recognition
 
