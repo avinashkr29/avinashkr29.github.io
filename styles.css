@@ -387,8 +387,8 @@ a:hover {
 
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
 }
 
 .app-card {
@@ -459,23 +459,23 @@ a:hover {
 
 /* App Icon Display - Clean Professional Style */
 .app-icon-display {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-lg);
     background: linear-gradient(135deg, var(--background-secondary), var(--background-tertiary));
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 200px;
+    min-height: 140px;
     position: relative;
 }
 
 .app-icon-image {
-    width: 120px !important;
-    height: 120px !important;
-    border-radius: 27px; /* iOS app icon rounded corners (22.5% of width) */
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 18px; /* iOS app icon rounded corners (22.5% of width) */
     object-fit: cover;
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.12),
-        0 4px 16px rgba(0, 0, 0, 0.08),
+        0 6px 24px rgba(0, 0, 0, 0.12),
+        0 3px 12px rgba(0, 0, 0, 0.08),
         0 1px 4px rgba(0, 0, 0, 0.04);
     transition: all var(--transition-base);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -498,27 +498,27 @@ a:hover {
 /* Responsive app icon sizes */
 @media (max-width: 768px) {
     .app-icon-display {
-        padding: var(--spacing-xl);
-        min-height: 160px;
+        padding: var(--spacing-md);
+        min-height: 120px;
     }
     
     .app-icon-image {
-        width: 100px;
-        height: 100px;
-        border-radius: 22.5px; /* Maintain 22.5% ratio */
+        width: 70px;
+        height: 70px;
+        border-radius: 16px; /* Maintain 22.5% ratio */
     }
 }
 
 @media (max-width: 480px) {
     .app-icon-display {
-        padding: var(--spacing-lg);
-        min-height: 140px;
+        padding: var(--spacing-sm);
+        min-height: 100px;
     }
     
     .app-icon-image {
-        width: 80px;
-        height: 80px;
-        border-radius: 18px; /* Maintain 22.5% ratio */
+        width: 60px;
+        height: 60px;
+        border-radius: 13.5px; /* Maintain 22.5% ratio */
     }
 }
 
@@ -545,7 +545,7 @@ a:hover {
 }
 
 .app-info {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-lg);
 }
 
 .app-info h3 {
