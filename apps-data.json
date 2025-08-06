@@ -77,7 +77,7 @@
       "shortDescription": "Offline messenger using Bluetooth mesh network for decentralized communication",
       "fullDescription": "Connect directly with people around you without internet or servers - truly private peer-to-peer communication",
       "appStoreURL": "https://apps.apple.com/us/app/flight-mode-chat/id6749311035",
-      "iconURL": "https://avinashkr29.github.io/flight_mode_chat_icon.png",
+      "iconURL": "./flight_mode_chat_icon.png",
       "category": "Social Networking",
       "gradientColors": ["#007AFF", "#5856D6"],
       "features": [
