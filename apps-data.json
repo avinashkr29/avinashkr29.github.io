@@ -20,7 +20,8 @@
       "techStack": ["SwiftUI", "ARKit", "Core Location", "Metal"],
       "size": "165.2 MB",
       "pricing": "Free + IAP",
-      "rating": "New Release",
+      "rating": 5.0,
+      "ratingText": "New Release",
       "releaseDate": "2024-12-01",
       "isActive": true,
       "priority": 1
@@ -43,7 +44,8 @@
       "techStack": ["SwiftUI", "AVSpeechSynthesizer", "WidgetKit", "i18n"],
       "size": "11.9 MB",
       "pricing": "Free",
-      "rating": "5.0 (21)",
+      "rating": 5.0,
+      "ratingText": "5.0 (21 reviews)",
       "releaseDate": "2024-10-15",
       "isActive": true,
       "priority": 2
@@ -66,7 +68,8 @@
       "techStack": ["Core Motion", "Multipeer Connectivity", "Game Center", "SwiftUI"],
       "size": "48.1 MB",
       "pricing": "Free + IAP",
-      "rating": "New Release",
+      "rating": 5.0,
+      "ratingText": "New Release",
       "releaseDate": "2024-11-20",
       "isActive": true,
       "priority": 3
@@ -77,7 +80,7 @@
       "shortDescription": "Offline messenger using Bluetooth mesh network for decentralized communication",
       "fullDescription": "Connect directly with people around you without internet or servers - truly private peer-to-peer communication",
       "appStoreURL": "https://apps.apple.com/us/app/flight-mode-chat/id6749311035",
-      "iconURL": "./flight_mode_chat_icon.png",
+      "iconURL": "https://avinashkr29.github.io/flight_mode_chat_icon.png",
       "category": "Social Networking",
       "gradientColors": ["#007AFF", "#5856D6"],
       "features": [
@@ -89,7 +92,8 @@
       "techStack": ["Bluetooth LE", "Mesh Networking", "End-to-End Encryption", "SwiftUI"],
       "size": "12.7 MB",
       "pricing": "Free + IAP",
-      "rating": "New Release",
+      "rating": 5.0,
+      "ratingText": "New Release",
       "releaseDate": "2025-01-15",
       "isActive": true,
       "priority": 4
@@ -112,7 +116,8 @@
       "techStack": ["GPS Integration", "Maps", "Location Services"],
       "size": "18.4 MB",
       "pricing": "Free",
-      "rating": "5.0 (7)",
+      "rating": 5.0,
+      "ratingText": "5.0 (7 reviews)",
       "releaseDate": "2024-09-10",
       "isActive": true,
       "priority": 5

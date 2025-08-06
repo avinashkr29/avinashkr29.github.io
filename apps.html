@@ -483,7 +483,7 @@
                                 <span class="stat-badge">${app.size || 'Unknown'}</span>
                                 <span class="stat-badge">${app.category || 'App'}</span>
                                 <span class="stat-badge">${app.pricing || 'Unknown'}</span>
-                                <span class="stat-badge rating">${app.rating || 'New'}</span>
+                                <span class="stat-badge rating">${this.renderRating(app)}</span>
                             </div>
                             
                             ${features.length > 0 ? `
@@ -513,6 +513,16 @@
                         </div>
                     </div>
                 `;
+            }
+
+            renderRating(app) {
+                const rating = app.rating || 5.0;
+                const ratingText = app.ratingText || app.rating || 'No Rating';
+                
+                // Generate star display
+                const stars = '⭐'.repeat(Math.round(rating));
+                
+                return `${stars} ${ratingText}`;
             }
 
             getAppEmoji(category) {
