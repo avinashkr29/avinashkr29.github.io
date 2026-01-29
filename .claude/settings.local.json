@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "mcp__firecrawl-mcp__firecrawl_scrape",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(python3:*)",
+      "Bash(git add:*)",
+      "WebFetch(domain:itunes.apple.com)",
+      "WebFetch(domain:itunes.apple.com)",
+      "Bash(grep:*)",
+      "Bash(git commit:*)",
+      "Bash(open:*)",
+      "Bash(cp:*)",
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)",
+      "Bash(git merge:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": []
+  }
+}

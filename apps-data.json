@@ -1,0 +1,152 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-01-23T10:30:00Z",
+  "apps": [
+    {
+      "id": "batchly-bulk-image-editor",
+      "name": "BatchlyBee Bulk Image Editor",
+      "shortDescription": "Fast, friendly batch photo editor for iPhone and iPad with resizing, watermarking, and format conversion",
+      "fullDescription": "Apply consistent edits to dozens (or hundreds) of images at once, save reusable workflows, and export in the formats you need—without juggling complex desktop tools",
+      "appStoreURL": "https://apps.apple.com/us/app/batchlybee-bulk-image-editor/id6751959442",
+      "iconURL": "https://avinashkr29.github.io/Batchly.png",
+      "category": "Productivity",
+      "gradientColors": ["#95D0A8", "#FF9F7A"],
+      "features": [
+        "Batch crop with flexible presets (Free, 1:1, 4:3, 16:9, 3:2)",
+        "Resize photos by pixels, percentage, or popular sizes",
+        "Add text or image watermarks with pixel-perfect positioning",
+        "Convert formats: JPEG, PNG, HEIC, TIFF with quality control",
+        "Save workflows for repeated tasks",
+        "100% on-device processing for privacy and speed"
+      ],
+      "techStack": ["SwiftUI", "Core Image", "Photo Editing", "File Management"],
+      "size": "23.9 MB",
+      "pricing": "Free + IAP",
+      "rating": 5.0,
+      "ratingText": "New Release",
+      "releaseDate": "2025-01-23",
+      "isActive": true,
+      "priority": 4
+    },
+    {
+      "id": "skymap-constellation-finder",
+      "name": "Skymap: Constellation Finder",
+      "shortDescription": "AR-powered astronomy app with real-time celestial tracking and constellation identification",
+      "fullDescription": "Perfect for astronomy lovers and students exploring space science",
+      "appStoreURL": "https://apps.apple.com/us/app/skymap-constellation-finder/id6741057101",
+      "iconURL": "https://avinashkr29.github.io/planet_spot.png",
+      "category": "Education",
+      "gradientColors": ["#0066CC", "#9933FF"],
+      "features": [
+        "Real-time AR sky tracking",
+        "Track Jupiter, Saturn, Mars, Venus & more", 
+        "Interactive constellation stories",
+        "SwiftUI + C++ hybrid architecture"
+      ],
+      "techStack": ["SwiftUI", "ARKit", "Core Location", "Metal"],
+      "size": "165.2 MB",
+      "pricing": "Free + IAP",
+      "rating": 5.0,
+      "ratingText": "New Release",
+      "releaseDate": "2024-12-01",
+      "isActive": true,
+      "priority": 1
+    },
+    {
+      "id": "voice-clock-time-speaker",
+      "name": "Voice Clock: Time Speaker",
+      "shortDescription": "Smart talking clock for hands-free time management with multilingual support",
+      "fullDescription": "Very simple, but quite useful. Perfect when I need to focus on work but need to leave at a particular time",
+      "appStoreURL": "https://apps.apple.com/us/app/voice-clock-time-speaker/id6739522220",
+      "iconURL": "https://avinashkr29.github.io/voice.png",
+      "category": "Utilities",
+      "gradientColors": ["#FF6B35", "#F7931E"],
+      "features": [
+        "15+ languages supported",
+        "Scheduled & interval announcements",
+        "ADHD & accessibility friendly",
+        "Multiple clock faces & widgets"
+      ],
+      "techStack": ["SwiftUI", "AVSpeechSynthesizer", "WidgetKit", "i18n"],
+      "size": "11.9 MB",
+      "pricing": "Free",
+      "rating": 5.0,
+      "ratingText": "5.0 (21 reviews)",
+      "releaseDate": "2024-10-15",
+      "isActive": true,
+      "priority": 2
+    },
+    {
+      "id": "cowboy-quick-shot",
+      "name": "Cowboy Quick Shot",
+      "shortDescription": "Lightning-fast reflex game testing your Wild West gunslinger skills",
+      "fullDescription": "The ultimate mobile reflex game - one moment of hesitation means the difference between victory and defeat",
+      "appStoreURL": "https://apps.apple.com/jp/app/cowboy-quick-shot/id6747758240?l=en-US",
+      "iconURL": "https://avinashkr29.github.io/cowboy_icon.png",
+      "category": "Games",
+      "gradientColors": ["#8B4513", "#D2691E"],
+      "features": [
+        "Millisecond-accurate timing with motion detection",
+        "Authentic Wild West duel mechanics",
+        "Wireless multiplayer showdowns",
+        "Precision tracking & improvement analytics"
+      ],
+      "techStack": ["Core Motion", "Multipeer Connectivity", "Game Center", "SwiftUI"],
+      "size": "48.1 MB",
+      "pricing": "Free + IAP",
+      "rating": 5.0,
+      "ratingText": "New Release",
+      "releaseDate": "2024-11-20",
+      "isActive": true,
+      "priority": 5
+    },
+    {
+      "id": "flight-mode-chat",
+      "name": "Flight Mode Chat",
+      "shortDescription": "Offline messenger using Bluetooth mesh network for decentralized communication",
+      "fullDescription": "Connect directly with people around you without internet or servers - truly private peer-to-peer communication",
+      "appStoreURL": "https://apps.apple.com/us/app/flight-mode-chat/id6749311035",
+      "iconURL": "https://avinashkr29.github.io/flight_mode_chat_icon.png",
+      "category": "Social Networking",
+      "gradientColors": ["#007AFF", "#5856D6"],
+      "features": [
+        "Bluetooth LE mesh networking",
+        "End-to-end encrypted messages",
+        "Group and private chats",
+        "Rich media sharing (images, voice, files)"
+      ],
+      "techStack": ["Bluetooth LE", "Mesh Networking", "End-to-End Encryption", "SwiftUI"],
+      "size": "12.7 MB",
+      "pricing": "Free + IAP",
+      "rating": 5.0,
+      "ratingText": "New Release",
+      "releaseDate": "2025-01-15",
+      "isActive": true,
+      "priority": 3
+    },
+    {
+      "id": "hikers-view",
+      "name": "Hikers' View",
+      "shortDescription": "Real-time landmark tracking for outdoor enthusiasts",
+      "fullDescription": "What an amazing free application to visualise towns and landmarks from high rise buildings. Works smoothly!",
+      "appStoreURL": "https://apps.apple.com/jp/app/hikers-view/id6736524307?l=en-US",
+      "iconURL": "https://avinashkr29.github.io/hikers.png",
+      "category": "Travel",
+      "gradientColors": ["#34C759", "#30B349"],
+      "features": [
+        "Real-time GPS tracking",
+        "Landmark identification",
+        "Precise location services",
+        "Offline maps support"
+      ],
+      "techStack": ["GPS Integration", "Maps", "Location Services"],
+      "size": "18.4 MB",
+      "pricing": "Free",
+      "rating": 5.0,
+      "ratingText": "5.0 (7 reviews)",
+      "releaseDate": "2024-09-10",
+      "isActive": true,
+      "priority": 6
+    }
+  ]
+}

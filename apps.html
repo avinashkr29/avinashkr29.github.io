@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avinash Kumar - iOS Apps Showcase</title>
+    <meta name="description" content="Dynamic showcase of iOS apps by Avinash Kumar - Data Scientist & iOS Developer">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="planet_spot.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="planet_spot.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5856D6;
+            --accent-color: #FF9500;
+            --success-color: #34C759;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background-primary: #FFFFFF;
+            --background-secondary: #F5F5F7;
+            --background-tertiary: #FBFBFD;
+            --border-color: #D2D2D7;
+            --shadow-light: rgba(0, 0, 0, 0.04);
+            --shadow-medium: rgba(0, 0, 0, 0.08);
+            --shadow-strong: rgba(0, 0, 0, 0.12);
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --container-max-width: 1200px;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --transition-base: 0.25s ease-out;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #F5F5F7;
+                --text-secondary: #A1A1A6;
+                --background-primary: #000000;
+                --background-secondary: #1C1C1E;
+                --background-tertiary: #2C2C2E;
+                --border-color: #38383A;
+                --shadow-light: rgba(255, 255, 255, 0.04);
+                --shadow-medium: rgba(255, 255, 255, 0.08);
+                --shadow-strong: rgba(255, 255, 255, 0.12);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--background-primary) 0%, var(--background-secondary) 100%);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .api-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .api-status.loading {
+            background: var(--background-secondary);
+            color: var(--text-secondary);
+        }
+
+        .api-status.success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .api-status.error {
+            background: #FF3B30;
+            color: white;
+        }
+
+        .apps-section {
+            padding: 3rem 0 6rem;
+            background: var(--background-secondary);
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .apps-grid.loaded {
+            opacity: 1;
+        }
+
+        .app-card {
+            background: var(--background-primary);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px var(--shadow-strong);
+        }
+
+        .app-icon-display {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 140px;
+            position: relative;
+        }
+
+        .app-icon-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            object-fit: cover;
+            box-shadow: 
+                0 6px 24px rgba(0, 0, 0, 0.12),
+                0 3px 12px rgba(0, 0, 0, 0.08),
+                0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: all var(--transition-base);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-icon-image:hover {
+            transform: scale(1.05) translateY(-4px);
+        }
+
+        .app-info {
+            padding: 1.5rem;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .app-emoji {
+            font-size: 1.25rem;
+        }
+
+        .app-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .app-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-badge {
+            background: linear-gradient(135deg, var(--accent-color), #FF6B35);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--border-radius);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .stat-badge.rating {
+            background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+            color: #000 !important;
+        }
+
+        .app-features {
+            background: var(--background-tertiary);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .features-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 0.25rem 0;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .feature-item:not(:last-child) {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 0.25rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .app-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--background-secondary);
+            color: var(--text-primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--border-radius);
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .app-store-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+        }
+
+        .error-message i {
+            font-size: 3rem;
+            color: #FF3B30;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            transition: color var(--transition-base);
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2.25rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+            <h1>iOS Apps Showcase</h1>
+            <p>Dynamic showcase powered by JSON API</p>
+            <div class="api-status loading" id="apiStatus">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                Loading apps data...
+            </div>
+        </div>
+    </header>
+
+    <section class="apps-section">
+        <div class="container">
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+            </div>
+            
+            <div class="apps-grid" id="appsGrid"></div>
+            
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Unable to load apps data</h3>
+                <p>Please check the API endpoint or try again later.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        class AppsShowcase {
+            constructor() {
+                this.apiUrl = './apps-data.json';
+                this.retryCount = 0;
+                this.maxRetries = 3;
+                this.init();
+            }
+
+            async init() {
+                try {
+                    await this.loadAppsData();
+                } catch (error) {
+                    console.error('Failed to initialize apps showcase:', error);
+                    this.showError();
+                }
+            }
+
+            async loadAppsData() {
+                this.updateApiStatus('loading', 'Loading apps data...');
+                
+                try {
+                    const response = await fetch(this.apiUrl);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (!data.apps || !Array.isArray(data.apps)) {
+                        throw new Error('Invalid data format: apps array not found');
+                    }
+                    
+                    this.renderApps(data.apps);
+                    this.updateApiStatus('success', `Loaded ${data.apps.length} apps • Updated: ${this.formatDate(data.lastUpdated)}`);
+                    
+                } catch (error) {
+                    console.error('Error loading apps data:', error);
+                    
+                    if (this.retryCount < this.maxRetries) {
+                        this.retryCount++;
+                        this.updateApiStatus('loading', `Retrying... (${this.retryCount}/${this.maxRetries})`);
+                        setTimeout(() => this.loadAppsData(), 2000);
+                    } else {
+                        this.showError(error.message);
+                    }
+                }
+            }
+
+            renderApps(apps) {
+                const appsGrid = document.getElementById('appsGrid');
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                
+                // Sort by priority
+                const sortedApps = apps
+                    .filter(app => app.isActive)
+                    .sort((a, b) => (a.priority || 999) - (b.priority || 999));
+                
+                appsGrid.innerHTML = sortedApps.map(app => this.createAppCard(app)).join('');
+                
+                loadingSpinner.style.display = 'none';
+                appsGrid.classList.add('loaded');
+            }
+
+            createAppCard(app) {
+                const gradient = app.gradientColors && app.gradientColors.length >= 2 
+                    ? `linear-gradient(135deg, ${app.gradientColors[0]}, ${app.gradientColors[1]})`
+                    : 'linear-gradient(135deg, var(--background-secondary), var(--background-tertiary))';
+
+                const features = app.features || [];
+                const techStack = app.techStack || [];
+                const emoji = this.getAppEmoji(app.category);
+
+                return `
+                    <div class="app-card">
+                        <div class="app-icon-display" style="background: ${gradient};">
+                            <img src="${app.iconURL}" 
+                                 alt="${app.name} App Icon" 
+                                 class="app-icon-image"
+                                 onerror="this.style.display='none'">
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <h3 class="app-name">${app.name}</h3>
+                                <span class="app-emoji">${emoji}</span>
+                            </div>
+                            
+                            <p class="app-description">${app.shortDescription}</p>
+                            
+                            <div class="app-stats">
+                                <span class="stat-badge">${app.size || 'Unknown'}</span>
+                                <span class="stat-badge">${app.category || 'App'}</span>
+                                <span class="stat-badge">${app.pricing || 'Unknown'}</span>
+                                <span class="stat-badge rating">${this.renderRating(app)}</span>
+                            </div>
+                            
+                            ${features.length > 0 ? `
+                            <div class="app-features">
+                                <div class="features-title">Key Features</div>
+                                ${features.map(feature => `
+                                    <div class="feature-item">${feature}</div>
+                                `).join('')}
+                            </div>
+                            ` : ''}
+                            
+                            ${techStack.length > 0 ? `
+                            <div class="app-tech-stack">
+                                ${techStack.map(tech => `
+                                    <span class="tech-tag">${tech}</span>
+                                `).join('')}
+                            </div>
+                            ` : ''}
+                            
+                            <a href="${app.appStoreURL}" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="app-store-btn">
+                                <i class="fab fa-apple"></i>
+                                View on App Store
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderRating(app) {
+                const rating = app.rating || 5.0;
+                const ratingText = app.ratingText || app.rating || 'No Rating';
+                
+                // Generate star display
+                const stars = '⭐'.repeat(Math.round(rating));
+                
+                return `${stars} ${ratingText}`;
+            }
+
+            getAppEmoji(category) {
+                const emojiMap = {
+                    'Education': '🌌',
+                    'Utilities': '🔊', 
+                    'Games': '🤠',
+                    'Social Networking': '✈️',
+                    'Travel': '🏔️',
+                    'Productivity': '🐝'
+                };
+                return emojiMap[category] || '📱';
+            }
+
+            updateApiStatus(status, message) {
+                const statusElement = document.getElementById('apiStatus');
+                statusElement.className = `api-status ${status}`;
+                
+                const icons = {
+                    loading: 'fas fa-circle-notch fa-spin',
+                    success: 'fas fa-check-circle',
+                    error: 'fas fa-exclamation-triangle'
+                };
+                
+                statusElement.innerHTML = `<i class="${icons[status]}"></i>${message}`;
+            }
+
+            showError(message = 'Unknown error occurred') {
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                const errorMessage = document.getElementById('errorMessage');
+                
+                loadingSpinner.style.display = 'none';
+                errorMessage.style.display = 'block';
+                
+                this.updateApiStatus('error', `Error: ${message}`);
+            }
+
+            formatDate(dateString) {
+                if (!dateString) return 'Unknown';
+                
+                try {
+                    return new Date(dateString).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                } catch {
+                    return 'Unknown';
+                }
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new AppsShowcase();
+        });
+    </script>
+</body>
+</html>
