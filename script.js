@@ -67,25 +67,51 @@ function initializeMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
+    const body = document.body;
     
-    hamburger.addEventListener('click', function() {
+    function toggleMenu() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        // Prevent body scroll when menu is open
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        body.style.overflow = '';
+    }
+    
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
     });
     
     // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMenu();
         });
     });
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMenu();
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Close menu on window resize to desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMenu();
         }
     });
 }
@@ -414,34 +440,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Add CSS classes for enhanced mobile navigation
+// Additional CSS for section animations (mobile nav styles now in main CSS)
 const additionalCSS = `
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-    
-    .nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-top: 1px solid var(--border-color);
-        padding: var(--spacing-lg);
-        gap: var(--spacing-md);
-    }
-    
     .nav-menu a.active {
         color: var(--primary-color);
         font-weight: 600;
@@ -456,12 +456,6 @@ const additionalCSS = `
     .section-visible {
         opacity: 1;
         transform: translateY(0);
-    }
-    
-    @media (max-width: 768px) {
-        .nav-menu {
-            display: none;
-        }
     }
 `;
 
