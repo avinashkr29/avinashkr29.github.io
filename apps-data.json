@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-01-23T10:30:00Z",
+  "lastUpdated": "2026-03-04T10:30:00Z",
   "apps": [
     {
       "id": "batchly-bulk-image-editor",
@@ -26,7 +26,7 @@
       "ratingText": "New Release",
       "releaseDate": "2025-01-23",
       "isActive": true,
-      "priority": 4
+      "priority": 5
     },
     {
       "id": "skymap-constellation-finder",
@@ -74,7 +74,7 @@
       "ratingText": "5.0 (21 reviews)",
       "releaseDate": "2024-10-15",
       "isActive": true,
-      "priority": 2
+      "priority": 3
     },
     {
       "id": "cowboy-quick-shot",
@@ -98,7 +98,7 @@
       "ratingText": "New Release",
       "releaseDate": "2024-11-20",
       "isActive": true,
-      "priority": 5
+      "priority": 6
     },
     {
       "id": "flight-mode-chat",
@@ -122,7 +122,33 @@
       "ratingText": "New Release",
       "releaseDate": "2025-01-15",
       "isActive": true,
-      "priority": 3
+      "priority": 4
+    },
+    {
+      "id": "voice-calculator-speak-add",
+      "name": "Voice Calculator: Speak & Add",
+      "shortDescription": "Hands-free math with voice input and visual verification for accurate calculations",
+      "fullDescription": "Stop typing numbers. Start speaking them. Voice Calculator lets you speak numbers and operations naturally — see each one appear on screen for verification, then get your answer instantly.",
+      "appStoreURL": "https://apple.co/4bi8U6R",
+      "iconURL": "https://avinashkr29.github.io/voice_calculator_icon.png",
+      "category": "Utilities",
+      "gradientColors": ["#FF6B35", "#9933FF"],
+      "features": [
+        "Voice input with natural speech recognition",
+        "Visual verification of each number as you speak",
+        "Batch operations for adding multiple numbers",
+        "Audit trail to review calculation steps",
+        "Error correction without starting over",
+        "Full accessibility and VoiceOver support"
+      ],
+      "techStack": ["Speech Recognition", "SwiftUI", "Accessibility", "VoiceOver"],
+      "size": "12.5 MB",
+      "pricing": "Free + IAP",
+      "rating": 5.0,
+      "ratingText": "New Release",
+      "releaseDate": "2025-03-04",
+      "isActive": true,
+      "priority": 2
     },
     {
       "id": "hikers-view",
@@ -146,7 +172,7 @@
       "ratingText": "5.0 (7 reviews)",
       "releaseDate": "2024-09-10",
       "isActive": true,
-      "priority": 6
+      "priority": 7
     }
   ]
 }
